@@ -9,7 +9,7 @@
         android:layout_width= "match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/questionTV"
-        android:text="Did Martin Luther King Jr. make a speech in Washington DC?"
+        android:text="@string/qText1"
         android:textSize="50dp"
         />
     <LinearLayout
@@ -21,20 +21,20 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="True"
+            android:text="@string/trueBtn"
             android:id="@+id/trueButton" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="False"
+            android:text="@string/falseBtn"
             android:id="@+id/falseButton" />
 
     </LinearLayout>
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:text="@string/nextBtn"
         android:id="@+id/nextButton" />
 
 </LinearLayout>

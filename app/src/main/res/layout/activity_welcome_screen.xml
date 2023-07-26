@@ -9,7 +9,7 @@
         android:layout_width= "match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/welcomeTV"
-        android:text="Welcome to the Black History Quiz App"
+        android:text="@string/welcomeText"
         android:textSize="50dp"
         android:textAlignment="center"
         />
@@ -17,6 +17,6 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:text="@string/nextBtn"
         android:id="@+id/nextButton" />
 </LinearLayout>

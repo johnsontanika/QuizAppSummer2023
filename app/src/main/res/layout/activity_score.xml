@@ -9,7 +9,7 @@
         android:layout_width= "match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scoreTV"
-        android:text="Score: "
+        android:text="@string/scoreText"
         android:textSize="70dp"
         android:textAlignment="center"
         />

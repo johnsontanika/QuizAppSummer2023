@@ -32,12 +32,11 @@ public class MainActivity extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.nextButton);
         score = 0;
         currentIndex = 0;
-        q1 = new Question("Did Martin Luther King Jr. make a speech in Washington DC?", true);
-        q2 = new Question( "Vermont was the first colony to ban slavery in 1800", false);
-        q3 = new Question("In the 1770s, a Quaker named Anthony Benezet created the first school for African American children", true);
-        q4 = new Question("William Tucker, son of indentured servants from Great Britian, was the first recorded African child to be born in the colonies in 1620", false);
-        q5 = new Question("There was a Black wall street in Tulsa, OK", true);
-        q6 = new Question("The first black woman ran for president in, 1969 and was almost assassinated three times", false);
+        q2 = new Question(getString(R.string.qText2), false);
+        q3 = new Question(getString(R.string.qText3), true);
+        q4 = new Question(getString(R.string.qText4), false);
+        q5 = new Question(getString(R.string.qText5), true);
+        q6 = new Question(getString(R.string.qText6), false);
         currentQ = q1;
         questions = new Question[] {q1, q2, q3, q4, q5, q6};
 
@@ -46,11 +45,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (currentQ.getCorrectAnswer()== true){
-                    message = "You are correct";
+                    message = getString(R.string.rightMsg);
                     score ++;
                 }
                 else {
-                    message = "You are wrong";
+                    message = getString(R.string.wrongMsg);
                 }
 
                 int duration = Toast.LENGTH_SHORT;
@@ -64,11 +63,11 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (currentQ.getCorrectAnswer()== false){
-                    message = "You are correct";
+                    message = getString(R.string.rightMsg);
                     score ++;
                 }
                 else {
-                    message = "You are wrong";
+                    message = getString(R.string.wrongMsg);
                 }
 
                 int duration = Toast.LENGTH_SHORT;
