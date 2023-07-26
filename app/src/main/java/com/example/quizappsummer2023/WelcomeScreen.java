@@ -6,12 +6,14 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class WelcomeScreen extends AppCompatActivity {
 
-    TextView welcomeTV;
+    TextView welcomeTV, nameText1;
     Button nextButton;
+    EditText instructionTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,13 +22,14 @@ public class WelcomeScreen extends AppCompatActivity {
 
         welcomeTV = (TextView) findViewById(R.id.welcomeTV);
         nextButton = (Button) findViewById(R.id.nextButton);
-
-        Intent incomingIntent = getIntent();
+        nameText1 = (TextView) findViewById(R.id.nameText1);
+        instructionTV = (EditText) findViewById(R.id.instructionTV);
 
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+               Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+               startActivity(intent);
             }
         });
     }

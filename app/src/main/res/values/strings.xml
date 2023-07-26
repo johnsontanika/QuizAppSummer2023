@@ -13,4 +13,5 @@
     <string name="nextBtn">NEXT</string>
     <string name="scoreText">Score:</string>
     <string name="welcomeText">Welcome to the Black History Quiz App</string>
+    <string name="nameText1">What\'s Your Name</string>
 </resources>

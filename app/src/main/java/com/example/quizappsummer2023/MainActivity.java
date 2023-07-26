@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         nextButton = (Button) findViewById(R.id.nextButton);
         score = 0;
         currentIndex = 0;
+        q1 = new Question(getString(R.string.qText1), true);
         q2 = new Question(getString(R.string.qText2), false);
         q3 = new Question(getString(R.string.qText3), true);
         q4 = new Question(getString(R.string.qText4), false);
