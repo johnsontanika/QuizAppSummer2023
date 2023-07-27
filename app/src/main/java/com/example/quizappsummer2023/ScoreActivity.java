@@ -56,7 +56,10 @@ public class ScoreActivity extends AppCompatActivity {
             public void onClick(View v) {
 
                 hS1 = new HighScore(score, name);
-                myRef.setValue(hS1);
+                hS1.setpScore(score);
+                hS1.setpName(name);
+                myRef.child(score).child(name).setValue(hS1);
+
             }
         });
         retreiveBtn.setOnClickListener(new View.OnClickListener() {
