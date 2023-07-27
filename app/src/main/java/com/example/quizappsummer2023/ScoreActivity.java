@@ -10,13 +10,18 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class ScoreActivity extends AppCompatActivity {
 
     TextView scoreTV;
     int score;
     String name;
     Button sendScoreBtn, highScore;
-
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference("message");
+    HighScore hS1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,9 +35,9 @@ public class ScoreActivity extends AppCompatActivity {
         sendScoreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    String subject = "new score on quiz app";
-                    String body = "Hello!\n" + "Your score" + score;
-                    composeEmail(subject, body);
+                String subject = "new score on quiz app";
+                String body = "Hello!\n" + "Your score" + score;
+                composeEmail(subject, body);
             }
         });
         Intent incomingIntent = getIntent();
@@ -40,8 +45,16 @@ public class ScoreActivity extends AppCompatActivity {
         name = incomingIntent.getStringExtra("name");
 
         scoreTV.setText("Score =" + score);
+        highScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
+                hS1 = new HighScore(score, name);
+                myRef.setValue(hS1);
+            }
+        });
     }
+
     private void composeEmail(String subject, String body) {
         Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
         emailIntent.setData(Uri.parse("mailto:")); // only email apps should handle this
