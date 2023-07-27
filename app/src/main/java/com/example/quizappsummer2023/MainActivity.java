@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Question q1, q2, q3, q4, q5, q6, currentQ;
     Question[] questions;
     int currentIndex;
-    String message;
+    String message, name;
 
 
 
@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
         currentQ = q1;
         questions = new Question[] {q1, q2, q3, q4, q5, q6};
 
+        Intent incomingIntent = getIntent();
+        name = incomingIntent.getStringExtra("name");
 
         trueButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
                 {
                     Intent scoreIntent = new Intent(MainActivity.this, ScoreActivity.class);
                     scoreIntent.putExtra("score", score);
+                    scoreIntent.putExtra("name", name);
                     startActivity(scoreIntent);
                  }
 

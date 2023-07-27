@@ -29,6 +29,8 @@ public class WelcomeScreen extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                Intent intent = new Intent(WelcomeScreen.this, MainActivity.class);
+              String name = instructionTV.getText().toString();
+              intent.putExtra("name", name);
                startActivity(intent);
             }
         });

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "798471920035",
+    "project_id": "quizappsummer2023",
+    "storage_bucket": "quizappsummer2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:798471920035:android:f0e262379a5129d916e216",
+        "android_client_info": {
+          "package_name": "com.example.quizappsummer2023"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "798471920035-3df2kp1a38iklj2d7432v8na8hlcuqol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEdD-xaqMnUIAKvu3233tG1kJcI-0FPRg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "798471920035-3df2kp1a38iklj2d7432v8na8hlcuqol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
