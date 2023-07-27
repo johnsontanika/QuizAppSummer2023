@@ -25,5 +25,6 @@ public class HighScore
     public void setpName(String pName) {
         this.pName = pName;
     }
+
 }
 

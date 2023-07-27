@@ -3,11 +3,11 @@
     <string name="rightMsg">You are correct</string>
     <string name="wrongMsg">You are wrong</string>
     <string name="qText1">Did Martin Luther King Jr. make a speech in Washington DC?</string>
-    <string name="qText2">Vermont was the first colony to ban slavery in 1800</string>
-    <string name="qText3">In the 1770s, a Quaker named Anthony Benezet created the first school for African American children</string>
-    <string name="qText4">William Tucker, son of indentured servants from Great Britian, was the first recorded African child to be born in the colonies in 1620</string>
-    <string name="qText5">There was a Black wall street in Tulsa, OK</string>
-    <string name="qText6">The first black woman ran for president in, 1969 and was almost assassinated three times</string>
+    <string name="qText2">Vermont was the first colony to band slavery in 1800?</string>
+    <string name="qText3">In the 1770s, a Quaker named Anthony Benezet created the first school for African American children?</string>
+    <string name="qText4">William Tucker, son of indentured servants from Great Britian, was the first recorded African child to be born in the colonies in 1620?</string>
+    <string name="qText5">Was there a Black wall street in Tulsa, OK?</string>
+    <string name="qText6">The first black woman ran for president in, 1969 and was almost assassinated three times.</string>
     <string name="trueBtn">True</string>
     <string name="falseBtn">False</string>
     <string name="nextBtn">NEXT</string>
