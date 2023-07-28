@@ -17,15 +17,18 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class ScoreActivity extends AppCompatActivity {
 
-    TextView scoreTV;
-    int score;
-    String name;
-    Button sendScoreBtn, highScore, retreiveBtn;
+    TextView scoreTV, hScore;
+    int score, num;
+    String name, scoreList;
+    Button sendScoreBtn, highScore, retrieveBtn;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    DatabaseReference myRef = database.getReference("message");
+    DatabaseReference myRef = database.getReference("High Score");
     HighScore hS1;
+
     public static final String TAG = "BHQuiz";
 
     @Override
@@ -34,9 +37,12 @@ public class ScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_score);
 
         scoreTV = (TextView) findViewById(R.id.scoreTV);
+        scoreList = "";
         sendScoreBtn = (Button) findViewById(R.id.sendScoreBTN);
         highScore = (Button) findViewById(R.id.highScore);
-        retreiveBtn = (Button) findViewById(R.id.retreivebtn);
+        retrieveBtn = (Button) findViewById(R.id.retreivebtn);
+        hScore = (TextView) findViewById(R.id.hScore);
+        num = 0;
 
         sendScoreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,19 +56,19 @@ public class ScoreActivity extends AppCompatActivity {
         score = incomingIntent.getIntExtra("score", 0);
         name = incomingIntent.getStringExtra("name");
 
+
         scoreTV.setText("Score =" + score);
         highScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 hS1 = new HighScore(score, name);
-                hS1.setpScore(score);
-                hS1.setpName(name);
-                myRef.child(score).child(name).setValue(hS1);
-
+                String key = myRef.push().getKey();
+                myRef.child(key).setValue(hS1);
             }
         });
-        retreiveBtn.setOnClickListener(new View.OnClickListener() {
+
+        retrieveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 // Read from the database
@@ -71,8 +77,17 @@ public class ScoreActivity extends AppCompatActivity {
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         // This method is called once with the initial value and again
                         // whenever data at this location is updated.
-                        String value = dataSnapshot.getValue(String.class);
-                        Log.d(TAG, "Value is: " + value);
+                        for (DataSnapshot hsSnapShot : dataSnapshot.getChildren()) {
+
+                            if (num < 2){
+                                HighScore newHS = hsSnapShot.getValue(HighScore.class);
+                                Log.d(TAG, "Value is: " + newHS);
+
+                                num ++;
+                                scoreList += newHS.getpName() + "\t" + newHS.getpScore() + "\n";
+                            }
+                        }
+                        hScore.setText(scoreList);
                     }
 
                     @Override
@@ -82,7 +97,36 @@ public class ScoreActivity extends AppCompatActivity {
                     }
                 });
             }
+
         });
+
+
+//        retreiveBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Log.d(TAG, "got to retrieve button onClick");
+//                // Read from the database
+//                myRef.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot) {
+//                        // This method is called once with the initial value and again
+//                        // whenever data at this location is updated.
+//
+//                        for (DataSnapshot hSSnapShot : dataSnapshot.getChildren()) {
+//                            HighScore newHS = hSSnapShot.getValue(HighScore.class);
+//                            Log.d(TAG, "High Score is: " + newHS);
+//
+//
+//                        }
+//                    }
+//                    @Override
+//                    public void onCancelled(DatabaseError error) {
+//                        // Failed to read value
+//                        Log.w(TAG, "Failed to read High Score.", error.toException());
+//                    }
+//                });
+//            }
+//        });
     }
 
     private void composeEmail(String subject, String body) {

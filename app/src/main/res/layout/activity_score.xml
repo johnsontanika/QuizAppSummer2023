@@ -10,13 +10,14 @@
         android:layout_height="wrap_content"
         android:id="@+id/scoreTV"
         android:text="@string/scoreText"
-        android:textSize="70dp"
+        android:textSize="50dp"
         android:textAlignment="center"
         />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="SEND SCORE"
+        android:text="Send Email"
         android:id="@+id/sendScoreBTN"
         />
     <Button
@@ -29,5 +30,12 @@
         android:layout_height="wrap_content"
         android:text="Retreive"
         android:id="@+id/retreivebtn" />
-
+    <TextView
+        android:layout_width= "match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/hScore"
+        android:text="High Score"
+        android:textSize="40dp"
+        android:textAlignment="center"
+        />
 </LinearLayout>

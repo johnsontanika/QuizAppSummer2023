@@ -1,5 +1,7 @@
 package com.example.quizappsummer2023;
 
+import java.util.ArrayList;
+
 public class HighScore
 {
     int pScore;
@@ -7,6 +9,7 @@ public class HighScore
 
     public HighScore(int pScore, String pName) {
         this.pScore = pScore;
+        this.pName = pName;
     }
     public int getpScore() {
         return pScore;
@@ -28,5 +31,17 @@ public class HighScore
 
     }
 
+    @Override
+    public String toString() {
+        return "HighScore{" +
+                "pScore=" + pScore +
+                ", pName='" + pName + '\'' +
+                '}';
+    }
+
+    public HighScore() {
+        pName = "****";
+        pScore = 0;
+    }
 }
 

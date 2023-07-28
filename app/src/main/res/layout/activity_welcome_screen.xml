@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/welcomeTV"
         android:text="@string/welcomeText"
-        android:textSize="45dp"
+        android:textSize="25dp"
         android:textAlignment="center"
         />
     <TextView
@@ -19,14 +19,14 @@
         android:text="@string/nameText1"
         android:id="@+id/nameText1"
         android:gravity="center"
-        android:textSize="50dp" />
+        android:textSize="20dp" />
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/instructionTV"
         android:gravity="center"
         android:hint="Enter Name Here"
-        android:textSize="45dp" />
+        android:textSize="15dp" />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

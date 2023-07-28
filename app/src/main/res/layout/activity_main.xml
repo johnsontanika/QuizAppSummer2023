@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/questionTV"
         android:text="@string/qText1"
-        android:textSize="50dp"
+        android:textSize="20dp"
         />
     <LinearLayout
         android:layout_width="match_parent"
