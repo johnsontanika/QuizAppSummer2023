@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         q2 = new Question(getString(R.string.qText2), false, "q2");
         q3 = new Question(getString(R.string.qText3), true, "q3");
         q4 = new Question(getString(R.string.qText4), false, "q4");
-        q5 = new Question(getString(R.string.qText5), true, "a5");
+        q5 = new Question(getString(R.string.qText5), true, "q5");
         q6 = new Question(getString(R.string.qText6), false, "q6");
         currentQ = q1;
         questions = new Question[] {q1, q2, q3, q4, q5, q6};
